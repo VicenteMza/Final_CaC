@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Compra de ticket</title>
+</head>
+
+<body>
+  <!--header-->
+  <header id="header-container">
+    <!-- El encabezado se cargará aquí dinámicamente con JavaScript -->
+  </header>
+
+  <section class="container tickets">
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <div class="card-body border border-primary border-2 my-2" id="tickets1">
+          <h5 class="card-title">Estudiante</h5>
+          <p class="card-text">Tiene un descuento</p>
+          <p class="descuento">80%</p>
+          <p>*presentar documentación</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="card-body border border-success border-2 my-2" id="tickets2">
+          <h5 class="card-title">Trainee</h5>
+          <p class="card-text">Tiene descuento</p>
+          <p class="descuento">50%</p>
+          <p>*presentar documentación</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+
+        <div class="card-body border border-warning border-2 my-2" id="tickets3">
+          <h5 class="card-title">Junior</h5>
+          <p class="card-text">Tiene descuento</p>
+          <p class="descuento">15%</p>
+          <p>*presentar documentación</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="titulo">VENTA</p>
+      <h1 class="sub-titulo">VALOR DE TICKET $200</h1>
+    </div>
+
+    <form action="" id="formulario">
+      <div class="row">
+        <div class="col p-1">
+          <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" aria-label="Nombre">
+        </div>
+        <div class="col p-1" id="categoria">
+          <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido"
+            aria-label="Apellido">
+        </div>
+        <div class="col-12 p-0">
+          <input type="email" class="form-control" name="email" id="email" placeholder="correo electrónico">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col p-1">
+          <label for="cantidad" class="from-label">Cantidad</label><br>
+          <input type="number" id="cantidad" name="cantidad" class="form-control">
+        </div>
+        <div class="col p-1">
+          <label for="categoria" class="form-label">Categoria</label>
+          <select id="categoriaPrecio" class="form-select" name="categoria">
+            <option value="0.8">Estudiante</option>
+            <option value="0.5">Trainee</option>
+            <option value="0.15">Junior</option>
+            <option value="1">Sin categoría</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mb-3 mt-4 mb-4 valor">
+        <label for="imputTotal" class="col 6 mt-2">Total a pagar $ <span id="total"></span></label>
+      </div>
+      <div class="row">
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button class="btn  btn-success" type="button" value="borrar" id="borrar">Borrar</button>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button class="btn btn-success" type="button" value="resumen" id="resumen">Resumen</button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <footer id="footer-container" class="footer">
+    <!-- El footer de página se cargará aquí dinámicamente con JavaScript -->
+  </footer>
+
+  <script src="js/loadHeaderFooter.js"></script>
+  <script src="js/borrar_formulario.js"></script>
+
+  <script>
+    const botonResumen = document.getElementById("resumen");
+    botonResumen.addEventListener("click", function (event) {
+      event.preventDefault();
+      const totalSpan = document.getElementById("total");
+      const cantidad = parseInt(document.getElementById("cantidad").value);
+      const categoria = parseFloat(document.getElementById("categoriaPrecio").value);
+
+      //calcular el precio total
+      const precioPorTicket = 200;
+      const precioTotal = (categoria === 1)
+        ? cantidad * precioPorTicket
+        : cantidad * (precioPorTicket - (precioPorTicket * categoria))
+
+
+      //Mostrar precio totalen el campo "Total a pagar"
+      totalSpan.textContent = precioTotal.toFixed(2);
+      console.log("Cantidad: " + cantidad);
+      console.log("Categoría: " + categoria);
+    })  
+  </script>
+
+</body>
+
+</html>
