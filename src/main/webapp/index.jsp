@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF8"%>
 <!doctype html>
 <html lang="es">
 
@@ -101,23 +102,28 @@
         <h6>CONVIERTETE EN UN</h6>
         <h4>ORADOR</h4>
         <p>Anótate como orador, para dar una charla ignite.Cuéntanos de que quieres hablar</p>
-        <div class="row d-inline-flex formulario">
-            <div class="input-group sm-3">
-                <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
-                <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
+
+        <!-- Especifica la URL del servlet y el método POST -->
+        <form action="oradores" method="post">
+            <div class="row d-inline-flex formulario">
+                <div class="input-group sm-3">
+                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" aria-label="Nombre">
+                    <input type="text" class="form-control" name="apellido" placeholder="Apellido" aria-label="Apellido">
+                </div>
+                <div class="input-group sm-3">
+                    <input type="text" class="form-control" name="email" placeholder="email" aria-label="email">
+                </div>
+                <div class="input-group">
+                    <span class="input-text"></span>
+                    <textarea class="form-control" name="tema" aria-label="With textarea"
+                              placeholder="Sobre qué quieres hablar"></textarea>
+                </div>
+                <div>
+                    <input class="btn btn-success enviar" type="submit" value="Enviar">
+                    <p class="text-start" style="font-size: small;">Recuerda incluir un titulo para tu charla</p>
+                </div>
             </div>
-            <div class="input-group sm-3">
-                <input type="text" class="form-control" placeholder="email" aria-label="email">
-            </div>
-            <div class="input-group">
-                <span class="input-text"></span>
-                <textarea class="form-control" aria-label="With textarea"
-                          placeholder="Sobre qué quieres hablar"></textarea>
-            </div>
-            <div><input class="btn btn-success enviar" type="submit" value="Enviar">
-                <p class="text-start" style="font-size: small;">Recuerda incluir un titulo para tu charla</p>
-            </div>
-        </div>
+        </form>
     </div>
 </section>
 

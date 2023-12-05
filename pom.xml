@@ -4,6 +4,10 @@
   <groupId>org.example</groupId>
   <artifactId>CaC_Final</artifactId>
   <packaging>war</packaging>
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+  </properties>
   <version>1.0-SNAPSHOT</version>
   <name>CaC_Final Maven Webapp</name>
   <url>http://maven.apache.org</url>
@@ -14,8 +18,48 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+     <!-- Servlet API -->
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>3.1.0</version>
+        <scope>provided</scope>
+      </dependency>
+
+      <!-- JSP API -->
+      <dependency>
+        <groupId>javax.servlet.jsp</groupId>
+        <artifactId>javax.servlet.jsp-api</artifactId>
+        <version>2.3.1</version>
+        <scope>provided</scope>
+      </dependency>
+
+      <!-- JSTL (opcional, pero a menudo útil para JSP) -->
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+      </dependency>
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.23</version> <!-- Utiliza la última versión disponible -->
+      </dependency>
   </dependencies>
   <build>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
     <finalName>CaC_Final</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.1</version>
+      </plugin>
+    </plugins>
   </build>
 </project>
