@@ -21,10 +21,6 @@ Este proyecto es una aplicación web desarrollada en Java utilizando tecnología
     - Crea una base de datos llamada `integrador_cac`.
     - Configura las credenciales de acceso en `dao/DBConnection.java`.
 
-Claro, aquí está la versión actualizada del README para incluir la query de creación de la base de datos y la información sobre el uso de Tomcat 8.5:
-
-sql
-Copy code
 # Crear la base de datos
 CREATE DATABASE IF NOT EXISTS integrador_cac;
 USE integrador_cac;
