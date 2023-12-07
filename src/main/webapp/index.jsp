@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF8"%>
+<%@ page import="java.util.List" %>
 <!doctype html>
 <html lang="es">
 
@@ -130,6 +131,19 @@
 <footer id="footer-container">
     <!-- El pie de página se cargará aquí dinámicamente con JavaScript -->
 </footer>
+
+<%-- Código Java para mostrar alertas de errres en al carga de un orador --%>
+<%
+    List<String> errors = (List<String>) request.getAttribute("errors");
+    if(errors != null && !errors.isEmpty()){
+%>
+        <script type="text/javascript">
+            let errors = '<%= String.join("\\n", errors) %>';
+            alert('Se encontraron errores: \n' + errors);
+        </script>
+<%
+    }
+%>
 <!--<script src="js/bootstrap.bundle.min.js"></script>-->
 <script src="js/loadHeaderFooter.js"></script>
 </body>

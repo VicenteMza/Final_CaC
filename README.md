@@ -5,7 +5,7 @@ Este proyecto es una aplicación web desarrollada en Java utilizando tecnología
 ## Estructura del Proyecto
 
 - **src**: Contiene los archivos fuente Java.
-    - **servlets**: Clases Servlet.
+    - **controller**: Clases Servlet.
     - **dao**: Clases para la conexión y operaciones con la base de datos.
     - **model**: (Opcional) Clases que representan las entidades del modelo.
 
@@ -27,15 +27,16 @@ USE integrador_cac;
 
 ### Crear la tabla de oradores
 CREATE TABLE oradores (
-id_orador INT NOT NULL AUTO_INCREMENT,
-name VARCHAR(40) NOT NULL,
-lastName VARCHAR(40) NOT NULL,
+id INT NOT NULL AUTO_INCREMENT,
+name VARCHAR(50) NOT NULL,
+lastName VARCHAR(50) NOT NULL,
 email VARCHAR(255) NOT NULL,
-subject VARCHAR(255) NOT NULL,
+subject VARCHAR(500) NOT NULL,
 registration_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-PRIMARY KEY(id_orador)
+PRIMARY KEY(id)
 );
 ## Ejecución del Proyecto
-1. **Acceso**:
-    - Accede a la aplicación desde [http://localhost:8080/](http://localhost:8080/).
+**Acceso**:
+1. - Accede a la aplicación desde [http://localhost:8080/](http://localhost:8080/).
 2. - Asegúrate de tener **apache-tomcat-8.5.95** instalado.
+3. - Asegurate de estar usando **JDK 17**.
