@@ -105,19 +105,36 @@
         <p>Anótate como orador, para dar una charla ignite.Cuéntanos de que quieres hablar</p>
 
         <!-- Especifica la URL del servlet y el método POST -->
-        <form action="oradores" method="post">
+        <form action="oradores" method="post" class="needs-validation" novalidate>
             <div class="row d-inline-flex formulario">
-                <div class="input-group sm-3">
-                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" aria-label="Nombre">
-                    <input type="text" class="form-control" name="apellido" placeholder="Apellido" aria-label="Apellido">
+                <div  class="row g-3" >
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre" aria-label="Nombre" required>
+                        <div class="invalid-feedback">
+                            <!-- Validado por validateOrador.js -->
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" name="apellido" placeholder="Apellido" aria-label="Apellido" required>
+                        <div class="invalid-feedback">
+                            <!-- Validado por validateOrador.js -->
+                        </div>
+                    </div>
+                    
                 </div>
                 <div class="input-group sm-3">
-                    <input type="text" class="form-control" name="email" placeholder="email" aria-label="email">
+                    <input type="email" class="form-control" name="email" placeholder="email" aria-label="email" required>
+                    <div class="invalid-feedback">
+                        <!-- Validado por validateOrador.js -->
+                    </div>
                 </div>
                 <div class="input-group">
                     <span class="input-text"></span>
-                    <textarea class="form-control" name="tema" aria-label="With textarea"
-                              placeholder="Sobre qué quieres hablar"></textarea>
+                    <textarea class="form-control" name="tema" aria-label="With textarea" placeholder="Sobre qué quieres hablar" required></textarea>
+                    <div class="invalid-feedback">
+                        <!-- Validado por validateOrador.js -->
+                    </div>
                 </div>
                 <div>
                     <input class="btn btn-success enviar" type="submit" value="Enviar">
@@ -146,6 +163,8 @@
 %>
 <!--<script src="js/bootstrap.bundle.min.js"></script>-->
 <script src="js/loadHeaderFooter.js"></script>
+<script src="./js/validateOrador.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </body>
 
 </html>
