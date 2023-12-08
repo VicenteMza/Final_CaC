@@ -136,17 +136,21 @@
                         <!-- Validado por validateOrador.js -->
                     </div>
                 </div>
-                <div>
+                <div class="col-md-6">
                     <input class="btn btn-success enviar" type="submit" value="Enviar">
-                    <p class="text-start" style="font-size: small;">Recuerda incluir un titulo para tu charla</p>
                 </div>
+                <div class="col-md-6">
+                    <a href="listOradores.jsp" class="btn btn-success enviar"style="width:100%">Lista de Oradores</a>
+                </div>
+                <p class="text-start" style="font-size: small;">Recuerda incluir un titulo para tu charla</p>
+
             </div>
         </form>
     </div>
 </section>
 
 <footer id="footer-container">
-    <!-- El pie de página se cargará aquí dinámicamente con JavaScript -->
+    <!-- El footer se cargará aquí dinámicamente con JavaScript -->
 </footer>
 
 <%-- Código Java para mostrar alertas de errres en al carga de un orador --%>
