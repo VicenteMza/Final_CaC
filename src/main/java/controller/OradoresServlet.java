@@ -41,6 +41,7 @@ public class OradoresServlet extends HttpServlet {
             oradorDAO.insertOrador(orador);
             response.sendRedirect("index.jsp");
         }else {
+            System.out.println(errors);
             request.setAttribute("errors", errors);
             RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
             dispatcher.forward(request,response);

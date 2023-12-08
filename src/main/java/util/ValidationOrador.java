@@ -25,7 +25,7 @@ public class ValidationOrador {
     }
     public static List<String> validateSubject(String subject){
         List<String> errors = new ArrayList<>();
-        if (subject.isEmpty() || subject.length() > 500){
+        if (subject == null ||subject.isEmpty() || subject.length() > 500){
             errors.add("El tema no puede estas vacio y no puede tener más de 500 caracteres.");
         }
         return errors;
