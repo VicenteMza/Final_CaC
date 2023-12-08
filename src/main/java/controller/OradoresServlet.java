@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @WebServlet("/oradores")
@@ -37,7 +38,7 @@ public class OradoresServlet extends HttpServlet {
         errors.addAll(ValidationOrador.validateEmail(email));
 
         if (errors.isEmpty()) {
-            OradorEntity orador = new OradorEntity(name, lastname, email, subject, formatDate);
+            OradorEntity orador = new OradorEntity(null, name, lastname, email, subject, formatDate);
             oradorDAO.insertOrador(orador);
             response.sendRedirect("index.jsp");
         }else {
@@ -46,5 +47,14 @@ public class OradoresServlet extends HttpServlet {
             RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
             dispatcher.forward(request,response);
         }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<OradorEntity> oradores = oradorDAO.getAll();
+        request.setAttribute("oradores", oradores);
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/jsp/listOradores.jsp");
+        dispatcher.forward(request,response);
     }
 }

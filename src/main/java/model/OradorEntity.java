@@ -1,8 +1,9 @@
 package model;
 
 public class OradorEntity {
+    private Long id;
     private String name;
-    private String lasName;
+    private String lastName;
     private String email;
     private String subject;
     private String registration_date;
@@ -10,12 +11,21 @@ public class OradorEntity {
     public OradorEntity() {
     }
 
-    public OradorEntity(String name, String lasName, String email, String subject, String registration_date) {
+    public OradorEntity(Long id, String name, String lastName, String email, String subject, String registration_date) {
+        this.id = id;
         this.name = name;
-        this.lasName = lasName;
+        this.lastName = lastName;
         this.email = email;
         this.subject = subject;
         this.registration_date = registration_date;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -26,12 +36,12 @@ public class OradorEntity {
         this.name = name;
     }
 
-    public String getLasName() {
-        return lasName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLasName(String lasName) {
-        this.lasName = lasName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -56,5 +66,17 @@ public class OradorEntity {
 
     public void setRegistration_date(String registration_date) {
         this.registration_date = registration_date;
+    }
+
+    @Override
+    public String toString() {
+        return "OradorEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", subject='" + subject + '\'' +
+                ", registration_date='" + registration_date + '\'' +
+                '}';
     }
 }

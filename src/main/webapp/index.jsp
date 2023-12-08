@@ -140,10 +140,9 @@
                     <input class="btn btn-success enviar" type="submit" value="Enviar">
                 </div>
                 <div class="col-md-6">
-                    <a href="listOradores.jsp" class="btn btn-success enviar"style="width:100%">Lista de Oradores</a>
+                    <button class="btn btn-success enviar" id="listOradores">Listar Oradores</button>
                 </div>
                 <p class="text-start" style="font-size: small;">Recuerda incluir un titulo para tu charla</p>
-
             </div>
         </form>
     </div>
@@ -169,6 +168,8 @@
 <script src="js/loadHeaderFooter.js"></script>
 <script src="./js/validateOrador.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="./js/listOradores.js"></script>
+
 </body>
 
 </html>
