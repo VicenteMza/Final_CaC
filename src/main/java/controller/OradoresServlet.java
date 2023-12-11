@@ -48,7 +48,6 @@ public class OradoresServlet extends HttpServlet {
             dispatcher.forward(request,response);
         }
     }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<OradorEntity> oradores = oradorDAO.getAll();
