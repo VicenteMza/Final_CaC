@@ -34,7 +34,7 @@ email VARCHAR(255) NOT NULL,
 subject VARCHAR(500) NOT NULL,
 registration_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY(id)
-);
+) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 ## Ejecución del Proyecto
 **Acceso**:
 1. - Accede a la aplicación desde [http://localhost:8080/](http://localhost:8080/).
