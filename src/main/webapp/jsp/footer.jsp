@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<footer class="footer">
+<footer id="sticky-footer" class="footer">
     <div class="container-fluid text-center">
       <div class="row">
         <nav class="navbar navbar-expand-lg text-center ">

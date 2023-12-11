@@ -1,16 +1,8 @@
 .footer{
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: auto;
     height: 80px;
     text-align: start;
     background:linear-gradient( to right, rgb(29,55,68),rgb(29,82,113));
     margin:auto;
-    bottom: 0;
-    width: 100%;
-}
-.container {
-    margin-top: 20px; /* Ajusta según sea necesario */
 }
 .a-nav{
     padding-top: 10px;
